@@ -39,7 +39,7 @@ Finish the route, and the game tells you how close you got to the **shortest pos
 | 🏝️ | **Island nations** | Countries with no land border connect to their nearest neighbours with faint dashed sea links |
 | 🧊 | **Greenland bridge** | The Americas link to Eurasia through Canada → Greenland → Denmark, and Alaska ↔ Russia (the Diomede Islands) |
 | 🧠 | **Shortest-route scoring** | Your route is compared with the optimal one found by a graph search |
-| 🎚️ | **3 difficulty levels** | Easy (3–4 steps), Medium (5–6) and Hard (7+) |
+| 🎚️ | **3 difficulty levels** | Easy (3-4 steps), Medium (5-6) and Hard (7+) |
 | 💬 | **Autocomplete** | Suggestions as you type, with aliases (USA, UK, UAE, Czechia, and more) |
 | ↩️ | **Undo, reveal, new puzzle** | Take back a step, show the shortest route, or start over |
 | 🌗 | **Light and dark mode** | Follows your system theme automatically |
@@ -95,11 +95,14 @@ flowchart LR
  
 No install, no build step, no server.
  
+
+1. Clone the repo
+
 ```bash
-# 1. Clone the repo
 git clone https://github.com/<your-username>/Travel-There.git
- 
-# 2. Open the game
+```
+2. Open the game
+```bash
 cd border-route
 open index.html        # macOS
 # start index.html     # Windows
