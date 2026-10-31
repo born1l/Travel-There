@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Border route</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Border route</h1>
+    <p class="lede">Connect the start country to the target by naming neighbours one at a time.</p>
+
+    <div class="brief"><span>Start <b class="s" id="sName"></b></span><span>Target <b class="t"
+          id="tName"></b></span><small id="par"></small></div>
+
+    <div class="mapbox"><svg id="map" viewBox="0 0 1000 394" role="img"
+        aria-label="Zoomable, draggable world map showing your route">
+        <rect width="1000" height="394" fill="var(--sea)" />
+        <defs>
+          <g id="world"></g>
+        </defs>
+        <g id="vw">
+          <use href="#world" x="0" />
+          <use href="#world" x="1000" />
+        </g>
+      </svg>
+      <div class="zoom"><button id="zin" aria-label="Zoom in">+</button><button id="zout"
+          aria-label="Zoom out">−</button><button id="zreset" aria-label="Reset view">⟲</button></div>
+    </div>
+    <div class="panel">
+      <div class="entry"><input id="inp" autocomplete="off" spellcheck="false"
+          placeholder="Next country after the last one in your route" aria-label="Country name"><button class="primary"
+          id="go">Add</button></div>
+      <div class="sugg" id="sugg"></div>
+      <p id="msg" role="status"></p>
+      <p class="route" id="route"></p>
+      <div class="row">
+        <button id="undo">Undo</button>
+        <button id="reveal">Show shortest route</button>
+        <button id="new">New puzzle</button>
+        <label>Difficulty <select id="diff">
+            <option value="3,4">Easy</option>
+            <option value="5,6" selected>Medium</option>
+            <option value="7,12">Hard</option>
+          </select></label>
+        <label><input type="checkbox" id="all" style="flex:none"> Show all links</label>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  </script>
+</body>
+
+</html>

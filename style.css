@@ -1,0 +1,305 @@
+:root {
+    --bg: #EEF1F0;
+    --ink: #17212B;
+    --muted: #5B6B73;
+    --panel: #fff;
+    --line: #CBD5D3;
+    --sea: #DCE8EE;
+    --land: #FBFCFB;
+    --edge: #9AAFA9;
+    --dot: #8FA19B;
+    --route: #0B7A75;
+    --start: #2446D6;
+    --target: #C2185B;
+    --bad: #B93131;
+    color-scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #0F1719;
+        --ink: #E4EEEC;
+        --muted: #93A6A3;
+        --panel: #172326;
+        --line: #2B3D40;
+        --sea: #13262C;
+        --land: #21383C;
+        --edge: #3F5E60;
+        --dot: #5E7873;
+        --route: #3FD1C7;
+        --start: #7A96FF;
+        --target: #FF6FA3;
+        --bad: #FF8484;
+        color-scheme: dark
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #0F1719;
+    --ink: #E4EEEC;
+    --muted: #93A6A3;
+    --panel: #172326;
+    --line: #2B3D40;
+    --sea: #13262C;
+    --land: #21383C;
+    --edge: #3F5E60;
+    --dot: #5E7873;
+    --route: #3FD1C7;
+    --start: #7A96FF;
+    --target: #FF6FA3;
+    --bad: #FF8484;
+    color-scheme: dark
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px)
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.45
+}
+
+main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px 16px 40px
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 44px);
+    line-height: 1;
+    margin: 0 0 8px;
+    font-weight: 800;
+    letter-spacing: -.02em
+}
+
+.lede {
+    color: var(--muted);
+    margin: 0 0 16px
+}
+
+.brief {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px
+}
+
+.brief b {
+    padding: 3px 10px;
+    border-radius: 8px;
+    color: #fff
+}
+
+.s {
+    background: var(--start)
+}
+
+.t {
+    background: var(--target)
+}
+
+.brief small {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 400
+}
+
+.mapbox {
+    background: var(--sea);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden
+}
+
+.mapbox {
+    position: relative
+}
+
+svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    touch-action: none;
+    cursor: grab;
+    user-select: none
+}
+
+svg:active {
+    cursor: grabbing
+}
+
+.land {
+    fill: var(--land);
+    stroke: var(--edge);
+    stroke-width: .6;
+    vector-effect: non-scaling-stroke;
+    transition: fill .5s
+}
+
+.c-route {
+    fill: var(--route)
+}
+
+.c-start {
+    fill: var(--start)
+}
+
+.c-target {
+    fill: var(--target)
+}
+
+.c-tidle {
+    fill: var(--target);
+    fill-opacity: .35
+}
+
+.zoom {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.zoom button {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: var(--panel);
+    font-size: 20px
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    margin-top: 12px
+}
+
+.entry {
+    display: flex;
+    gap: 8px
+}
+
+input,
+select {
+    font: inherit;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid var(--line);
+    background: var(--bg);
+    color: var(--ink)
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    font-size: 17px
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    padding: 9px 13px
+}
+
+button:hover {
+    border-color: var(--ink)
+}
+
+button.primary {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+    font-weight: 600
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--start);
+    outline-offset: 2px
+}
+
+button:disabled,
+input:disabled {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+.sugg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+    min-height: 34px
+}
+
+.sugg button {
+    padding: 4px 10px;
+    font-size: 14px
+}
+
+#msg {
+    min-height: 24px;
+    margin: 8px 0 0
+}
+
+#msg.bad {
+    color: var(--bad)
+}
+
+#msg.ok {
+    color: var(--route);
+    font-weight: 600
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-top: 10px
+}
+
+.row label {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 14px
+}
+
+.route {
+    margin: 10px 0 0;
+    color: var(--muted)
+}
+
+.route strong {
+    color: var(--ink)
+}
+
+.legend {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 8px 2px 0
+}
