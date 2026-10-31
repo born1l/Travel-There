@@ -1,5 +1,6 @@
 <div align="center">
-# 🗺️ Border Route
+
+# 🗺️ Travel There
  
 ### Connect any two countries on Earth, one neighbour at a time.
  
@@ -14,6 +15,7 @@ A browser-based geography puzzle game with a zoomable, draggable world map that 
 [🎮 Play the game](#) · [✨ Features](#-features) · [🧠 How it works](#-how-it-works) · [🚀 Run it locally](#-run-it-locally)
  
 </div>
+
 ---
  
 ## 🎯 The idea
@@ -95,7 +97,7 @@ No install, no build step, no server.
  
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/border-route.git
+git clone https://github.com/<your-username>/Travel-There.git
  
 # 2. Open the game
 cd border-route
